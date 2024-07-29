@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Groups */
+.group-green {
+    --group-color: var(--technicolor-green);
+}
+
+.group-plum {
+    --group-color: var(--technicolor-plum);
+}
+
+.group-blue {
+    --group-color: var(--technicolor-blue);
+}

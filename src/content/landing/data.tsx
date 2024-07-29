@@ -1,5 +1,9 @@
 import { IntroductionMain } from './components/introduction-main';
 import { IntroductionAside } from './components/introduction-aside';
+import { ExperienceMain } from './components/experience-main';
+import { ExperienceAside } from './components/experience-aside';
+import { ContactMain } from './components/contact-main';
+import { ContactAside } from './components/contact-aside';
 
 export const CONTENT = {
   seo: {
@@ -11,6 +15,14 @@ export const CONTENT = {
     {
       mainContent: <IntroductionMain />,
       asideContent: <IntroductionAside />,
+    },
+    {
+      mainContent: <ExperienceMain />,
+      asideContent: <ExperienceAside />,
+    },
+    {
+      mainContent: <ContactMain />,
+      asideContent: <ContactAside />,
     },
   ],
 };
