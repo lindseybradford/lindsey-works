@@ -17,14 +17,23 @@ type HeadingProps = {
 
 export const Heading = ({ level, className, children }: HeadingProps) => {
   const HeadingStyles = new Map([
-    [HeadingLevel.H1, 'text-5xl font-mono max-w-xxl mb-16 leading-tight'],
-    [HeadingLevel.H2, 'text-3xl font-mono max-w-xl mb-10'],
+    [
+      HeadingLevel.H1,
+      cn(
+        `text-5xl font-bold font-mono max-w-xxl mb-16 leading-tight`,
+        className
+      ),
+    ],
+    [
+      HeadingLevel.H2,
+      cn(`text-3xl font-bold font-mono max-w-xl mb-10`, className),
+    ],
   ]);
 
   return createElement(
     `h${level}`,
     {
-      className: cn(HeadingStyles.get(level), className),
+      className: HeadingStyles.get(level),
     },
     children
   );

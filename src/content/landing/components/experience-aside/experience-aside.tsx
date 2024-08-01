@@ -7,15 +7,45 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 
 export const ExperienceAside = () => {
   return (
-    <aside className="lg:pt-14 md:pt-12 flex flex-col justify-center space-y-12">
+    <aside className="lg:pt-32 md:pt-12 flex flex-col justify-center space-y-12">
+      <div className="text-technicolor-plum group-plum">
+        <MetaList>
+          <li>
+            <Paragraph isFlush>Mixpanel</Paragraph>
+          </li>
+        </MetaList>
+        <MetaLabel hasDingbat={false} tagName="h3">
+          Software Engineer <br /> 2023 - Present
+        </MetaLabel>
+      </div>
+      <div className="text-technicolor-blue group-blue">
+        <MetaList>
+          <li>
+            <Paragraph isFlush>Bottle</Paragraph>
+          </li>
+        </MetaList>
+        <MetaLabel hasDingbat={false} tagName="h3">
+          Software Engineer <br /> 2021 - 2022
+        </MetaLabel>
+      </div>
+      <div className="text-technicolor-orange group-orange">
+        <MetaList>
+          <li>
+            <Paragraph isFlush>Viget Labs</Paragraph>
+          </li>
+        </MetaList>
+        <MetaLabel hasDingbat={false} tagName="h3">
+          Senior Frontend Developer <br /> 2020 - 2021
+        </MetaLabel>
+      </div>
       <div className="text-technicolor-green group-green">
         <MetaList>
           <li>
-            <Paragraph isFlush>12</Paragraph>
+            <Paragraph isFlush>Telegraph</Paragraph>
           </li>
         </MetaList>
-        <MetaLabel tagName="h3" className="-ml-3">
-          Years experience
+        <MetaLabel hasDingbat={false} tagName="h3">
+          Co-Founder, Tech Lead <br /> 2012 - 2020
         </MetaLabel>
       </div>
     </aside>

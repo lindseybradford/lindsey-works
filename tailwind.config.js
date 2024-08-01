@@ -10,6 +10,7 @@ export default {
         pavement: 'var(--technicolor-pavement)',
         green: 'var(--technicolor-green)',
         yellow: 'var(--technicolor-yellow)',
+        rose: 'var(--technicolor-rose)',
       },
       white: '#ECECE3',
     },
@@ -22,8 +23,14 @@ export default {
           pavement: '#161616',
           green: '#008A4C',
           yellow: '#FFC20F',
+          rose: '#BF245E',
         },
       },
+    },
+    lineHeight: {
+      snug: `1.375rem`,
+      normal: `1.5rem`,
+      relaxed: `2rem`,
     },
   },
   plugins: [

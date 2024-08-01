@@ -1,4 +1,4 @@
-import { Paragraph, ParagraphVariant } from '@src/components/ui/paragraph';
+import { Paragraph, ParagraphSize } from '@src/components/ui/paragraph';
 import { Heading, HeadingLevel } from '@src/components/ui/heading';
 
 export const IntroductionMain = () => {
@@ -10,12 +10,12 @@ export const IntroductionMain = () => {
           <span className="text-technicolor-orange">UI/UX Projectionist.</span>
         </b>
       </Heading>
-      <Paragraph className="max-w-2xl">
+      <Paragraph className="text-technicolor-pavement max-w-2xl" isTranslucent>
         With 12+ years experience in Brand and Product, I’ve used my frontend
         expertise to craft beautiful, performant and highly-functional digital
         interfaces.
       </Paragraph>
-      <Paragraph className="max-w-2xl">
+      <Paragraph className="text-technicolor-pavement max-w-2xl" isTranslucent>
         I believe in leaving things better than I found them, making clarity
         before haste, and that our future is best made together.
       </Paragraph>
