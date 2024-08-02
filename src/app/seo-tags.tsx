@@ -45,6 +45,10 @@ export const SEOTags = (props: SEOTagsProps) => {
 
       <meta property="og:type" content={props.ogType} />
       <meta property="og:title" content={props.title} />
+      <meta
+        property="og:image"
+        content="https://lindsey.work/projectionist.webp"
+      />
       <meta property="og:description" content={props.description} />
       <meta property="og:site_name" content={props.siteName} />
 
