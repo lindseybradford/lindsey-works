@@ -36,6 +36,7 @@ export const LandingRoute = () => {
           })}
         </main>
       </div>
+      <div className="bg"></div>
     </>
   );
 };

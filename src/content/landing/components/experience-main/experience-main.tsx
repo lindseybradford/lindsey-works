@@ -14,6 +14,7 @@ export const ExperienceMain = () => {
     isTechnicolor ? `text-pavement` : `text-putty`,
     `max-w-2xl`
   );
+
   return (
     <div className="lg:pt-14 md:pt-12">
       <Heading

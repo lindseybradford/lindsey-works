@@ -17,7 +17,7 @@ export const ContactMain = () => {
 
   const ContactLinks = () => {
     return (
-      <ul className={cn('md:flex md:space-x-8 lg:space-x-12')}>
+      <ul className={cn('mb-10 md:flex md:space-x-8 lg:space-x-12')}>
         <li>
           <a
             className={cn(
@@ -53,9 +53,7 @@ export const ContactMain = () => {
       >
         Contact
       </Heading>
-      <Paragraph className={paragraphStyles}>
-        <ContactLinks />
-      </Paragraph>
+      <ContactLinks />
       <Paragraph className={paragraphStyles}>
         I’m actively seeking remote full-time Software Engineer, Senior Frontend
         Engineer, and Design System Engineer roles.

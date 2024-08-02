@@ -12,7 +12,9 @@ export const Layout = tv({
     sectionSideMargins: 'lg:px-24 md:px-16 px-8',
     textTransition: 'transition-colors ease-in-out duration-200',
     textLink:
-      'decoration-dotted decoration-current underline underline-offset-4 decoration-1 transition-all ease-in-out duration-200 hover:underline-offset-8',
+      'inline-block decoration-dotted decoration-current underline underline-offset-4 decoration-1 transition-all ease-in-out duration-200 hover:underline-offset-8 active:translate-y-1',
+    textLinkPressed:
+      'transition-transform duration-200 ease-in-out active:translate-y-1',
   },
 });
 

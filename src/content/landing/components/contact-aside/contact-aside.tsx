@@ -4,7 +4,7 @@ import { cn } from '@src/utils/cn';
 import { Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph, ParagraphSize } from 'src/components/ui/paragraph';
-import projectionistImage from '@public/projectionist.webp';
+import projectionistImage from '@public/projectionist-color.webp';
 
 const MetaList = ({ children }: { children: React.ReactNode }) => {
   return <ul className="m-0 space-y-1">{children}</ul>;
@@ -28,7 +28,10 @@ export const ContactAside = () => {
           <img
             src={projectionistImage}
             alt="Lindsey Bradford"
-            className="max-w-96 mb-10"
+            className={cn(
+              'profile-image max-w-96 mb-10 rounded-3xl',
+              !isTechnicolor && 'grayscale'
+            )}
           />
           <li>
             <Paragraph size={ParagraphSize.Base} isFlush className="mb-5">
