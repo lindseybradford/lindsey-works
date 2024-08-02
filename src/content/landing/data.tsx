@@ -1,9 +1,9 @@
-import { IntroductionMain } from './components/introduction-main';
-import { IntroductionAside } from './components/introduction-aside';
-import { ExperienceMain } from './components/experience-main';
-import { ExperienceAside } from './components/experience-aside';
-import { ContactMain } from './components/contact-main';
-import { ContactAside } from './components/contact-aside';
+import { IntroductionMain } from './introduction-main';
+import { IntroductionAside } from './introduction-aside';
+import { ExperienceMain } from './experience-main';
+import { ExperienceAside } from './experience-aside';
+import { ContactMain } from './contact-main';
+import { ContactAside } from './contact-aside';
 
 export const CONTENT = {
   seo: {
