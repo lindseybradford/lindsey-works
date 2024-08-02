@@ -74,10 +74,10 @@
     100% { transform: translate(5%,0) }
 }
 
-.theme-monochrome {
+.theme-moody-monochrome {
     @apply bg-pavement;
 }
-.theme-monochrome *::selection {
+.theme-moody-monochrome *::selection {
     background-color: var(--white);
     color: var(--pavement);
 }

@@ -10,6 +10,8 @@ export const Layout = tv({
   slots: {
     container: 'mx-auto max-w-screen-2xl',
     sectionSideMargins: 'lg:px-24 md:px-16 px-8',
+    sectionTopBarAtSm:
+      'border-t-2 border-solid border-white pt-8 md:border-none lg:border-none md:pt-0 lg:pt-0',
     textTransition: 'transition-colors ease-in-out duration-200',
     textLink:
       'inline-block decoration-dotted decoration-current underline underline-offset-4 decoration-1 transition-all ease-in-out duration-200 hover:underline-offset-8 active:translate-y-1',

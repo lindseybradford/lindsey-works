@@ -4,6 +4,7 @@ import { cn } from '@src/utils/cn';
 import { Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph, ParagraphSize } from 'src/components/ui/paragraph';
+import { Image } from '@src/components/ui/image';
 import projectionistImage from '@public/projectionist-color.webp';
 
 const MetaList = ({ children }: { children: React.ReactNode }) => {
@@ -24,13 +25,11 @@ export const ContactAside = () => {
             : `text-white group-white`
         )}
       >
-        <img
+        <Image
           src={projectionistImage}
           alt="Lindsey Bradford"
-          className={cn(
-            'profile-image max-w-96 mb-10 rounded-3xl',
-            !isTechnicolor && 'grayscale'
-          )}
+          className="mb-10 aspect-1 max-w-52 md:max-w-lg lg:max-w-lg"
+          classNameInner={cn('rounded-3xl', !isTechnicolor && 'grayscale')}
         />
         <MetaList>
           <li>

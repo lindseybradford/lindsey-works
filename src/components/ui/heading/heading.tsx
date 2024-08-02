@@ -24,7 +24,7 @@ export const Heading = ({ level, className, children }: HeadingProps) => {
     [
       HeadingLevel.H1,
       cn(
-        `text-8xl max-w-xxl mb-16 leading-2 tracking-tight`,
+        `lg:text-8xl md:text-6xl text-5xl max-w-xxl mb-16 leading-2 tracking-tight`,
         HeadingBaseStyles,
         className
       ),

@@ -28,7 +28,7 @@ export const LandingRoute = () => {
       />
       <div
         className={cn(
-          theme === Theme.Dark ? `theme-monochrome` : `theme-technicolor`,
+          theme === Theme.Dark ? `theme-moody-monochrome` : `theme-technicolor`,
           `font-body min-h-screen`
         )}
       >

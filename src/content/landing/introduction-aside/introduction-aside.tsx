@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Theme } from '@src/constants';
+import { Layout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { MetaLabel } from 'src/components/ui/meta-label';
 import { Paragraph } from 'src/components/ui/paragraph';
@@ -11,11 +11,17 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const IntroductionAside = () => {
+  const { sectionTopBarAtSm } = Layout();
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
 
   return (
-    <aside className="lg:self-end lg:min-w-56 lg:pt-14 md:pt-12 flex flex-col justify-center space-y-12">
+    <aside
+      className={cn(
+        sectionTopBarAtSm(),
+        'lg:self-end lg:min-w-56 lg:pt-14 md:pt-12 flex flex-col justify-center space-y-12'
+      )}
+    >
       <div
         className={cn(
           isTechnicolor
