@@ -22,4 +22,19 @@ export const URL = {
   mixpanel: 'https://mixpanel.com',
   bottle: 'https://bottle.com',
   viget: 'https://viget.com',
+  canonical: 'https://lindsey.work',
+  twitterProfile: 'https://twitter.com/lindseybradford',
+  linkedInProfile: 'https://www.linkedin.com/in/lindsey-bradford-36541479',
+};
+
+export const SEO = {
+  siteName: 'lindsey.work',
+  title: 'Lindsey Bradford | Senior Software Engineer',
+  description:
+    'With 12+ years experience in Brand and Product, I’ve used my frontend expertise to craft beautiful, performant and highly-functional digital interfaces.',
+  ogType: 'profile',
+  firstLastName: 'Lindsey Bradford',
+  twitterHandle: '@lindseybradford',
+  jobTitle: 'Senior Software Engineer',
+  currentEmployer: 'Mixpanel',
 };

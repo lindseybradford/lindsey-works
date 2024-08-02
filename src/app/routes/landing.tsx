@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Theme } from '@src/constants';
+import { SEO, Theme, URL } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { ContentSection } from '@src/components/layouts/content-section';
 import { TopNav } from '@src/components/layouts/top-nav';
@@ -14,17 +14,17 @@ export const LandingRoute = () => {
   return (
     <>
       <SEOTags
-        siteName={CONTENT.seo.siteName}
-        title={CONTENT.seo.title}
-        description={CONTENT.seo.description}
-        ogType={CONTENT.seo.ogType}
-        firstLastName={CONTENT.seo.firstLastName}
-        twitterHandle={CONTENT.seo.twitterHandle}
-        canonicalUrl={CONTENT.seo.canonicalUrl}
-        twitterProfile={CONTENT.seo.twitterProfile}
-        linkedInProfile={CONTENT.seo.linkedInProfile}
-        jobTitle={CONTENT.seo.jobTitle}
-        currentEmployer={CONTENT.seo.currentEmployer}
+        siteName={SEO.siteName}
+        title={SEO.title}
+        description={SEO.description}
+        ogType={SEO.ogType}
+        firstLastName={SEO.firstLastName}
+        twitterHandle={SEO.twitterHandle}
+        canonicalUrl={URL.canonical}
+        twitterProfile={URL.twitterProfile}
+        linkedInProfile={URL.linkedInProfile}
+        jobTitle={SEO.jobTitle}
+        currentEmployer={SEO.currentEmployer}
       />
       <div
         className={cn(

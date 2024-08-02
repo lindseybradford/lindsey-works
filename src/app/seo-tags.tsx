@@ -42,7 +42,9 @@ export const SEOTags = (props: SEOTagsProps) => {
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
       <meta name="robots" content="index,follow" />
+      <meta name="theme-color" content="#161616" />
 
+      <meta property="og:url" content={props.canonicalUrl} />
       <meta property="og:type" content={props.ogType} />
       <meta property="og:title" content={props.title} />
       <meta
@@ -53,7 +55,7 @@ export const SEOTags = (props: SEOTagsProps) => {
       <meta property="og:site_name" content={props.siteName} />
 
       <meta name="twitter:creator" content={props.twitterHandle} />
-      <meta name="twitter:card" content={props.ogType} />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={props.description} />
     </Helmet>
