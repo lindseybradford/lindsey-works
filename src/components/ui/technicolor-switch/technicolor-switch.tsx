@@ -22,7 +22,7 @@ export const TechnicolorSwitch = () => {
       <span
         className={cn(isTechnicolor ? `text-pavement` : `text-white`, `ml-2`)}
       >
-        Amazzzing Technicolor !
+        Amazzzing Technicolor •
       </span>
     </div>
   );

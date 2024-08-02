@@ -23,7 +23,11 @@ export const Heading = ({ level, className, children }: HeadingProps) => {
   const HeadingStyles = new Map([
     [
       HeadingLevel.H1,
-      cn(`text-5xl max-w-xxl mb-16 leading-2`, HeadingBaseStyles, className),
+      cn(
+        `text-8xl max-w-xxl mb-16 leading-2 tracking-tight`,
+        HeadingBaseStyles,
+        className
+      ),
     ],
     [
       HeadingLevel.H2,

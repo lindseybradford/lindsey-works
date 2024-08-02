@@ -16,7 +16,7 @@ export const ExperienceAside = () => {
   const isTechnicolor = theme === Theme.Technicolor;
 
   return (
-    <aside className="lg:pt-32 md:pt-12 flex flex-col justify-center space-y-12">
+    <aside className="lg:self-end lg:min-w-56 lg:pt-32 md:pt-12 flex flex-col justify-center space-y-12">
       <div
         className={cn(
           isTechnicolor
