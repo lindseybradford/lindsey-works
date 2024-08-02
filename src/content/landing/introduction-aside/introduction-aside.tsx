@@ -29,7 +29,7 @@ export const IntroductionAside = () => {
           </li>
         </MetaList>
         <MetaLabel
-          tagName="h3"
+          tagName="p"
           className={cn(!isTechnicolor && `opacity-60`, `-ml-3`)}
         >
           Years experience
@@ -67,7 +67,7 @@ export const IntroductionAside = () => {
           </li>
         </MetaList>
         <MetaLabel
-          tagName="h3"
+          tagName="p"
           className={cn(!isTechnicolor && `opacity-60`, `-ml-3`)}
         >
           Languages
@@ -93,7 +93,7 @@ export const IntroductionAside = () => {
           </li>
         </MetaList>
         <MetaLabel
-          tagName="h3"
+          tagName="p"
           className={cn(!isTechnicolor && `opacity-60`, `-ml-3`)}
         >
           Mediums

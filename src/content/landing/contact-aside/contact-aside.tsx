@@ -24,15 +24,15 @@ export const ContactAside = () => {
             : `text-white group-white`
         )}
       >
+        <img
+          src={projectionistImage}
+          alt="Lindsey Bradford"
+          className={cn(
+            'profile-image max-w-96 mb-10 rounded-3xl',
+            !isTechnicolor && 'grayscale'
+          )}
+        />
         <MetaList>
-          <img
-            src={projectionistImage}
-            alt="Lindsey Bradford"
-            className={cn(
-              'profile-image max-w-96 mb-10 rounded-3xl',
-              !isTechnicolor && 'grayscale'
-            )}
-          />
           <li>
             <Paragraph size={ParagraphSize.Base} isFlush className="mb-5">
               Colophon

@@ -33,7 +33,7 @@ export const ExperienceAside = () => {
             </Paragraph>
           </li>
         </MetaList>
-        <MetaLabel hasDingbat={false} tagName="h3">
+        <MetaLabel hasDingbat={false} tagName="p">
           Software Engineer <br /> 2023 - Present
         </MetaLabel>
       </div>
@@ -53,7 +53,7 @@ export const ExperienceAside = () => {
             </Paragraph>
           </li>
         </MetaList>
-        <MetaLabel hasDingbat={false} tagName="h3">
+        <MetaLabel hasDingbat={false} tagName="p">
           Software Engineer <br /> 2021 - 2022
         </MetaLabel>
       </div>
@@ -73,7 +73,7 @@ export const ExperienceAside = () => {
             </Paragraph>
           </li>
         </MetaList>
-        <MetaLabel hasDingbat={false} tagName="h3">
+        <MetaLabel hasDingbat={false} tagName="p">
           Senior Frontend Developer <br /> 2020 - 2021
         </MetaLabel>
       </div>
@@ -89,7 +89,7 @@ export const ExperienceAside = () => {
             <Paragraph isFlush>Telegraph</Paragraph>
           </li>
         </MetaList>
-        <MetaLabel hasDingbat={false} tagName="h3">
+        <MetaLabel hasDingbat={false} tagName="p">
           Co-Founder, Tech Lead <br /> 2012 - 2020
         </MetaLabel>
       </div>
