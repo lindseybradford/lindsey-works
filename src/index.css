@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
+@font-face {
+    font-family: "GTC";
+    src: url("/GTC-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "GTC";
+    src: url("/GTC-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "AKM";
+    src: url("/AKM.woff") format("woff");
+}
+
+@font-face {
+    font-family: "AKM";
+    src: url("/AKM-Regular.woff2") format("woff2");
+}
+
+
 /* Groups */
 .group-white {
     --group-color: var(--white);
@@ -20,7 +44,7 @@
 }
 
 /* Background */
-.bg {
+.noise {
     @apply fixed pointer-events-none;
 
     top: -50%;
@@ -31,12 +55,12 @@
     height: 200vh;
     background: transparent url('/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
-    animation: bg-animation .2s infinite;
+    animation: noise .2s infinite;
     opacity: .9;
     visibility: visible;
 }
   
-@keyframes bg-animation {
+@keyframes noise {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
     20% { transform: translate(-10%,5%) }
@@ -48,4 +72,21 @@
     80% { transform: translate(-15%,0) }
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
+}
+
+.theme-monochrome {
+    @apply bg-pavement;
+}
+.theme-monochrome *::selection {
+    background-color: var(--white);
+    color: var(--pavement);
+}
+
+.theme-technicolor {
+    @apply bg-white;
+}
+
+.theme-technicolor *::selection  {
+    background-color: var(--putty-dark);
+    color: var(--white);
 }

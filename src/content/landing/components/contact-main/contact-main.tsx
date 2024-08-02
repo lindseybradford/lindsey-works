@@ -11,7 +11,7 @@ export const ContactMain = () => {
   const isTechnicolor = theme === Theme.Technicolor;
   const { textLink } = Layout();
   const paragraphStyles = cn(
-    isTechnicolor ? `text-pavement` : `text-putty`,
+    isTechnicolor ? `text-putty-dark` : `text-white`,
     `max-w-2xl`
   );
 
@@ -53,21 +53,24 @@ export const ContactMain = () => {
       >
         Contact
       </Heading>
-      <ContactLinks />
-      <Paragraph className={paragraphStyles}>
-        I’m actively seeking remote full-time Software Engineer, Senior Frontend
-        Engineer, and Design System Engineer roles.
-      </Paragraph>
-      <Paragraph className={paragraphStyles}>
-        I’m enthusiastic about opportunities where I can ship beautiful product
-        experiences and systems built to scale. I’m eager to collaborate,
-        mentor, and learn from other engineers and cross-functional partners.
-      </Paragraph>
-      <Paragraph className={paragraphStyles}>
-        I live in Golden, CO with my partner and rescued cats. Like a true
-        Coloradan I spend my free time rock climbing, gravel biking,
-        snowboarding, and backpacking.
-      </Paragraph>
+      <div className="max-w-2xl">
+        <ContactLinks />
+        <Paragraph className={paragraphStyles}>
+          I’m actively seeking remote full-time Software Engineer, Senior
+          Frontend Engineer, and Design System Engineer roles.
+        </Paragraph>
+        <Paragraph className={paragraphStyles}>
+          I’m enthusiastic about opportunities where I can ship beautiful
+          product experiences and systems built to scale. I’m eager to
+          collaborate, mentor, and learn from other engineers and
+          cross-functional partners.
+        </Paragraph>
+        <Paragraph className={paragraphStyles}>
+          I live in Golden, CO with my partner and rescued cats. Like a true
+          Coloradan I spend my free time rock climbing, gravel biking,
+          snowboarding, and backpacking.
+        </Paragraph>
+      </div>
     </div>
   );
 };

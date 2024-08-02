@@ -2,6 +2,10 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      body: 'AKM',
+      heading: 'GTC',
+    },
     colors: {
       technicolor: {
         blue: 'var(--technicolor-blue)',
@@ -13,13 +17,19 @@ export default {
       },
       white: 'var(--white)',
       pavement: 'var(--pavement)',
-      putty: 'var(--putty)',
+      putty: {
+        DEFAULT: 'var(--putty)',
+        dark: 'var(--putty-dark)',
+      },
     },
     variables: {
       DEFAULT: {
         white: 'rgb(236, 236, 227)', // #ECECE3
         pavement: 'rgb(22, 22, 22)', // #161616
-        putty: '#A0A0A0',
+        putty: {
+          DEFAULT: '#A0A0A0',
+          dark: '#585858',
+        },
         technicolor: {
           blue: 'rgb(0, 140, 209)', // #008CD1
           orange: '#F36523',

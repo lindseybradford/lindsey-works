@@ -19,8 +19,8 @@ export const LandingRoute = () => {
       </Helmet>
       <div
         className={cn(
-          theme === Theme.Dark ? `bg-pavement` : `bg-white`,
-          `font-mono min-h-screen`
+          theme === Theme.Dark ? `theme-monochrome` : `theme-technicolor`,
+          `font-body min-h-screen`
         )}
       >
         <TopNav />
@@ -36,7 +36,7 @@ export const LandingRoute = () => {
           })}
         </main>
       </div>
-      <div className="bg"></div>
+      <div className="noise"></div>
     </>
   );
 };

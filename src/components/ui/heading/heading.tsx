@@ -19,7 +19,7 @@ type HeadingProps = {
 
 export const Heading = ({ level, className, children }: HeadingProps) => {
   const { textTransition } = Layout();
-  const HeadingBaseStyles = ['font-bold font-mono', textTransition()];
+  const HeadingBaseStyles = ['font-bold font-heading', textTransition()];
   const HeadingStyles = new Map([
     [
       HeadingLevel.H1,

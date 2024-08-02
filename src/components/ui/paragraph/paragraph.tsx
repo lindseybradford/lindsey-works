@@ -22,7 +22,7 @@ export const Paragraph = ({
   children,
 }: ParagraphProps) => {
   const { textTransition } = Layout();
-  const ParagraphBaseStyles = [textTransition()];
+  const ParagraphBaseStyles = [textTransition(), 'font-body'];
   const ParagraphStyles = new Map([
     [
       ParagraphSize.Base,
