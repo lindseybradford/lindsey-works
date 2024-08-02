@@ -1,3 +1,8 @@
+import { useContext } from 'react';
+
+import { cn } from '@src/utils/cn';
+import { Layout, Theme, URL } from '@src/constants';
+import { ThemeContext } from '@src/context/theme-provider';
 import { MetaLabel } from 'src/components/ui/meta-label';
 import { Paragraph } from 'src/components/ui/paragraph';
 
@@ -6,39 +11,79 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const ExperienceAside = () => {
+  const { textLink } = Layout();
+  const [theme] = useContext(ThemeContext);
+  const isTechnicolor = theme === Theme.Technicolor;
+
   return (
     <aside className="lg:pt-32 md:pt-12 flex flex-col justify-center space-y-12">
-      <div className="text-technicolor-plum group-plum">
+      <div
+        className={cn(
+          isTechnicolor
+            ? `text-technicolor-plum group-plum`
+            : `text-white group-white`
+        )}
+      >
         <MetaList>
           <li>
-            <Paragraph isFlush>Mixpanel</Paragraph>
+            <Paragraph isFlush>
+              <a className={textLink()} href={URL.mixpanel} target="_blank">
+                Mixpanel
+              </a>
+            </Paragraph>
           </li>
         </MetaList>
         <MetaLabel hasDingbat={false} tagName="h3">
           Software Engineer <br /> 2023 - Present
         </MetaLabel>
       </div>
-      <div className="text-technicolor-blue group-blue">
+      <div
+        className={cn(
+          isTechnicolor
+            ? `text-technicolor-blue group-blue`
+            : `text-white group-white`
+        )}
+      >
         <MetaList>
           <li>
-            <Paragraph isFlush>Bottle</Paragraph>
+            <Paragraph isFlush>
+              <a className={textLink()} href={URL.bottle} target="_blank">
+                Bottle
+              </a>
+            </Paragraph>
           </li>
         </MetaList>
         <MetaLabel hasDingbat={false} tagName="h3">
           Software Engineer <br /> 2021 - 2022
         </MetaLabel>
       </div>
-      <div className="text-technicolor-orange group-orange">
+      <div
+        className={cn(
+          isTechnicolor
+            ? `text-technicolor-orange group-orange`
+            : `text-white group-white`
+        )}
+      >
         <MetaList>
           <li>
-            <Paragraph isFlush>Viget Labs</Paragraph>
+            <Paragraph isFlush>
+              <a className={textLink()} href={URL.viget} target="_blank">
+                Viget Labs
+              </a>
+            </Paragraph>
           </li>
         </MetaList>
         <MetaLabel hasDingbat={false} tagName="h3">
           Senior Frontend Developer <br /> 2020 - 2021
         </MetaLabel>
       </div>
-      <div className="text-technicolor-green group-green">
+      <div
+        className={cn(
+          isTechnicolor
+            ? `text-technicolor-green group-green`
+            : `text-white group-white`
+        )}
+      >
         <MetaList>
           <li>
             <Paragraph isFlush>Telegraph</Paragraph>

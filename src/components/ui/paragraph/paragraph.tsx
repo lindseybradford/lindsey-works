@@ -1,15 +1,15 @@
 import { createElement } from 'react';
 
 import { cn } from '@src/utils/cn';
+import { Layout } from '@src/constants';
 
 export enum ParagraphSize {
   Base = 'base',
-  Small = 'small',
+  XSmall = 'small',
 }
 
 type ParagraphProps = {
   size?: ParagraphSize;
-  isTranslucent?: boolean;
   isFlush?: boolean;
   className?: string;
   children: React.ReactNode;
@@ -17,28 +17,29 @@ type ParagraphProps = {
 
 export const Paragraph = ({
   size = ParagraphSize.Base,
-  isTranslucent = false,
   isFlush = false,
   className,
   children,
 }: ParagraphProps) => {
+  const { textTransition } = Layout();
+  const ParagraphBaseStyles = [textTransition()];
   const ParagraphStyles = new Map([
     [
       ParagraphSize.Base,
       cn(
-        `text-base leading-relaxed`,
-        className,
+        `text-base leading-5`,
         !isFlush && 'mb-10',
-        isTranslucent && 'opacity-70'
+        className,
+        ParagraphBaseStyles
       ),
     ],
     [
-      ParagraphSize.Small,
+      ParagraphSize.XSmall,
       cn(
-        `text-sm leading-normal`,
-        className,
+        `text-xs leading-4`,
         !isFlush && 'mb-5',
-        isTranslucent && 'opacity-70'
+        className,
+        ParagraphBaseStyles
       ),
     ],
   ]);

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* Groups */
+.group-white {
+    --group-color: var(--white);
+}
+
 .group-green {
     --group-color: var(--technicolor-green);
 }

@@ -1,7 +1,9 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 
+import { Theme } from '@src/constants';
+import { ThemeContext } from '@src/context/theme-provider';
 import { Spinner } from '@src/components/ui/spinner';
 
 type AppProviderProps = {
@@ -17,10 +19,16 @@ const SuspenseFallback = () => {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
+  const [theme, setTheme] = useState(Theme.Dark);
+
   return (
     <Suspense fallback={SuspenseFallback()}>
       <ErrorBoundary fallback={<p>Something went wrong</p>}>
-        <HelmetProvider>{children}</HelmetProvider>
+        <HelmetProvider>
+          <ThemeContext.Provider value={[theme, setTheme]}>
+            {children}
+          </ThemeContext.Provider>
+        </HelmetProvider>
       </ErrorBoundary>
     </Suspense>
   );

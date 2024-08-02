@@ -23,11 +23,11 @@ export const TechnicolorIcon = ({ className }: IconProps) => {
           id="paint"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#008FD5" />
-          <stop offset="0.25" stop-color="#942977" />
-          <stop offset="0.5" stop-color="#F36523" />
-          <stop offset="0.75" stop-color="#FFEC01" />
-          <stop offset="1" stop-color="#008A4C" />
+          <stop stopColor="#008FD5" />
+          <stop offset="0.25" stopColor="#942977" />
+          <stop offset="0.5" stopColor="#F36523" />
+          <stop offset="0.75" stopColor="#FFEC01" />
+          <stop offset="1" stopColor="#008A4C" />
         </linearGradient>
       </defs>
     </svg>
