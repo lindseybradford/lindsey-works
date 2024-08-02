@@ -41,6 +41,7 @@ export const SEOTags = (props: SEOTagsProps) => {
     >
       <title>{props.title}</title>
       <meta name="description" content={props.description} />
+      <meta name="robots" content="index,follow" />
 
       <meta property="og:type" content={props.ogType} />
       <meta property="og:title" content={props.title} />
