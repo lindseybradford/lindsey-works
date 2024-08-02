@@ -1,22 +1,31 @@
 import { useContext } from 'react';
-import { Helmet } from 'react-helmet-async';
 
+import { cn } from '@src/utils/cn';
 import { Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { ContentSection } from '@src/components/layouts/content-section';
 import { TopNav } from '@src/components/layouts/top-nav';
+import { SEOTags } from '../seo-tags';
 import { CONTENT } from '@src/content/landing/data';
-import { cn } from '@src/utils/cn';
 
 export const LandingRoute = () => {
   const [theme] = useContext(ThemeContext);
 
   return (
     <>
-      <Helmet>
-        <title>{CONTENT.seo.title}</title>
-        <meta name="description" content={CONTENT.seo.description} />
-      </Helmet>
+      <SEOTags
+        siteName={CONTENT.seo.siteName}
+        title={CONTENT.seo.title}
+        description={CONTENT.seo.description}
+        ogType={CONTENT.seo.ogType}
+        firstLastName={CONTENT.seo.firstLastName}
+        twitterHandle={CONTENT.seo.twitterHandle}
+        canonicalUrl={CONTENT.seo.canonicalUrl}
+        twitterProfile={CONTENT.seo.twitterProfile}
+        linkedInProfile={CONTENT.seo.linkedInProfile}
+        jobTitle={CONTENT.seo.jobTitle}
+        currentEmployer={CONTENT.seo.currentEmployer}
+      />
       <div
         className={cn(
           theme === Theme.Dark ? `theme-monochrome` : `theme-technicolor`,
