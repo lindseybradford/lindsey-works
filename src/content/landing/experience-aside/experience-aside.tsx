@@ -40,7 +40,7 @@ export const ExperienceAside = () => {
           </li>
         </MetaList>
         <MetaLabel hasDingbat={false} tagName="p">
-          Software Engineer <br /> 2023 - Present
+          Senior Software Engineer <br /> 2023 - Present
         </MetaLabel>
       </div>
       <div
