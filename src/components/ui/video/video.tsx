@@ -5,11 +5,12 @@ import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
 type VideoProps = {
-  mp4Src: string;
+  mp4Src?: string;
   webmSrc: string;
   height: string;
   width: string;
   className?: string;
+  innerClassName?: string;
   isRounded?: boolean;
   playAsGif?: boolean;
   animationOnLoad?: MediaAnimation;
@@ -20,7 +21,10 @@ export const Video = ({
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: VideoProps) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const useAnimation = animationOnLoad !== MediaAnimation.None;
@@ -48,6 +52,7 @@ export const Video = ({
     <div
       ref={ref}
       className={cn(
+        props.className,
         useAnimation && 'transition-opacity duration-500',
         !isLoaded && useFadeAnimation && 'opacity-0',
         isLoaded && inView && useFadeAnimation && 'opacity-1'
@@ -56,7 +61,7 @@ export const Video = ({
       {inView && (
         <video
           className={cn(
-            props.className,
+            props.innerClassName,
             'relative',
             isRounded && 'rounded-3xl'
           )}
@@ -65,7 +70,7 @@ export const Video = ({
           width={props.width}
           {...videoAttributes}
         >
-          <source src={props.mp4Src} type="video/webm" />
+          {props.mp4Src && <source src={props.mp4Src} type="video/webm" />}
           <source src={props.webmSrc} type="video/mp4" />
         </video>
       )}

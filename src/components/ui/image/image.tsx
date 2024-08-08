@@ -19,7 +19,10 @@ export const Image = ({
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: ImageProps) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   const useAnimation = animationOnLoad !== MediaAnimation.None;
   const useFadeAnimation = animationOnLoad === MediaAnimation.Fade;
 
