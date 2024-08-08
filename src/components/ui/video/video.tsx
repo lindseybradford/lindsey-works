@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
-import './video.css';
-
 type VideoProps = {
   mp4Src: string;
   webmSrc: string;

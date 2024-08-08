@@ -4,8 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
-import './image.css';
-
 type ImageProps = {
   src: string;
   height: string;

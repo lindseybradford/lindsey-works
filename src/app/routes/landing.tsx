@@ -35,13 +35,14 @@ export const LandingRoute = () => {
         <TopNav />
         <main>
           {CONTENT.sections.map((section, id) => {
-            return (
-              <ContentSection
-                key={id}
-                mainContent={section.mainContent}
-                asideContent={section.asideContent}
-              />
-            );
+            const contentSectionProps = {
+              mainContent: section.mainContent,
+              asideContent: section.asideContent,
+              ...(section.bottomContent && {
+                bottomContent: section.bottomContent,
+              }),
+            };
+            return <ContentSection key={id} {...contentSectionProps} />;
           })}
         </main>
       </div>

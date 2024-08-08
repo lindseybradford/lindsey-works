@@ -1,5 +1,6 @@
 import { IntroductionMain } from './introduction-main';
 import { IntroductionAside } from './introduction-aside';
+import { IntroductionBottom } from './introduction-bottom';
 import { ExperienceMain } from './experience-main';
 import { ExperienceAside } from './experience-aside';
 import { ContactMain } from './contact-main';
@@ -10,6 +11,7 @@ export const CONTENT = {
     {
       mainContent: <IntroductionMain />,
       asideContent: <IntroductionAside />,
+      bottomContent: <IntroductionBottom />,
     },
     {
       mainContent: <ExperienceMain />,
