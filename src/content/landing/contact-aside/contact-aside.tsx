@@ -5,7 +5,8 @@ import { Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph, ParagraphSize } from 'src/components/ui/paragraph';
 import { Image } from '@src/components/ui/image';
-import projectionistImage from '@public/projectionist-color.webp';
+// @ts-expect-error
+import profilePhoto from './projectionist-color.webp?&as=metadata';
 
 const MetaList = ({ children }: { children: React.ReactNode }) => {
   return <ul className="m-0 space-y-1">{children}</ul>;
@@ -26,7 +27,9 @@ export const ContactAside = () => {
         )}
       >
         <Image
-          src={projectionistImage}
+          src={profilePhoto.src}
+          height={profilePhoto.height}
+          width={profilePhoto.width}
           alt="Lindsey Bradford"
           className="mb-10 aspect-1 max-w-52 md:max-w-lg lg:max-w-lg"
           classNameInner={cn('rounded-3xl', !isTechnicolor && 'grayscale')}

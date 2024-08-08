@@ -1,15 +1,55 @@
+import { useInView } from 'react-intersection-observer';
+
+import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
 type ImageProps = {
   src: string;
+  height: string;
+  width: string;
   alt: string;
   className?: string;
   classNameInner?: string;
+  isRounded?: boolean;
+  animationOnLoad?: MediaAnimation;
 };
-export const Image = ({ src, alt, className, classNameInner }: ImageProps) => {
+
+export const Image = ({
+  isRounded = true,
+  animationOnLoad = MediaAnimation.Fade,
+  ...props
+}: ImageProps) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const useAnimation = animationOnLoad !== MediaAnimation.None;
+  const useFadeAnimation = animationOnLoad === MediaAnimation.Fade;
+
   return (
-    <div className={cn(className, 'relative')}>
-      <img src={src} alt={alt} className={cn(classNameInner, 'absolute')} />
+    <div
+      ref={ref}
+      className={cn(
+        props.className,
+        'relative',
+        useAnimation && 'transition-opacity duration-500',
+        !inView && useFadeAnimation && 'opacity-0',
+        inView && useFadeAnimation && 'opacity-1'
+      )}
+    >
+      {inView && (
+        <img
+          src={props.src}
+          height={props.height}
+          width={props.width}
+          alt={props.alt}
+          className={cn(
+            props.classNameInner,
+            'absolute',
+            isRounded && 'rounded-3xl'
+          )}
+        />
+      )}
     </div>
   );
 };

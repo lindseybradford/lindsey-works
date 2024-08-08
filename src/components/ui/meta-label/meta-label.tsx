@@ -4,14 +4,14 @@ import { cn } from '@src/utils/cn';
 import { Layout } from '@src/constants';
 
 type MetaLabelProps = {
-  tagName: `h3` | `h4` | `h5` | `h6` | `p`;
+  tagName?: `h3` | `h4` | `h5` | `h6` | `p`;
   className?: string;
   hasDingbat?: boolean;
   children: React.ReactNode;
 };
 
 export const MetaLabel = ({
-  tagName,
+  tagName = 'p',
   className,
   hasDingbat = true,
   children,
@@ -27,7 +27,7 @@ export const MetaLabel = ({
       ),
     },
     hasDingbat &&
-      createElement('div', {
+      createElement('span', {
         className: cn(`h-2 w-2 mr-2 bg-[--group-color]`, textTransition()),
       }),
     children

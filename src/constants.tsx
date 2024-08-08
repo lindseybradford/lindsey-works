@@ -5,6 +5,11 @@ export enum Theme {
   Dark = 'dark',
 }
 
+export enum MediaAnimation {
+  None = 'none',
+  Fade = 'fade',
+}
+
 // Docs: https://www.tailwind-variants.org/docs/slots
 export const Layout = tv({
   slots: {
