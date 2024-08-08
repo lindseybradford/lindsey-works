@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useInView } from 'react-intersection-observer';
 
 import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
@@ -20,27 +19,34 @@ export const Image = ({
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: ImageProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const { ref, inView } = useInView();
   const useAnimation = animationOnLoad !== MediaAnimation.None;
   const useFadeAnimation = animationOnLoad === MediaAnimation.Fade;
 
   return (
-    <div className={cn(props.className, 'relative')}>
-      <LazyLoadImage
-        src={props.src}
-        height={props.height}
-        width={props.width}
-        alt={props.alt}
-        className={cn(
-          props.classNameInner,
-          'absolute',
-          isRounded && 'rounded-3xl',
-          useAnimation && 'transition-opacity duration-500',
-          !isLoaded && useFadeAnimation && 'opacity-0',
-          isLoaded && useFadeAnimation && 'opacity-1'
-        )}
-        onLoad={() => setIsLoaded(true)}
-      />
+    <div
+      ref={ref}
+      className={cn(
+        props.className,
+        'relative',
+        useAnimation && 'transition-opacity duration-500',
+        !inView && useFadeAnimation && 'opacity-0',
+        inView && useFadeAnimation && 'opacity-1'
+      )}
+    >
+      {inView && (
+        <img
+          src={props.src}
+          height={props.height}
+          width={props.width}
+          alt={props.alt}
+          className={cn(
+            props.classNameInner,
+            'absolute',
+            isRounded && 'rounded-3xl'
+          )}
+        />
+      )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { MediaAnimation } from '@src/constants';
 import { cn } from '@src/utils/cn';
@@ -19,6 +20,7 @@ export const Video = ({
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: VideoProps) => {
+  const { ref, inView } = useInView();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const useAnimation = animationOnLoad !== MediaAnimation.None;
@@ -34,29 +36,39 @@ export const Video = ({
   };
 
   useEffect(() => {
-    videoRef.current!.onloadeddata = () => {
-      videoRef.current!.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA &&
-        setIsLoaded(true);
-    };
+    if (inView) {
+      videoRef.current!.onloadeddata = () => {
+        videoRef.current!.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA &&
+          setIsLoaded(true);
+      };
+    }
   });
 
   return (
-    <video
+    <div
+      ref={ref}
       className={cn(
-        props.className,
-        'relative',
-        isRounded && 'rounded-3xl',
         useAnimation && 'transition-opacity duration-500',
         !isLoaded && useFadeAnimation && 'opacity-0',
-        isLoaded && useFadeAnimation && 'opacity-1'
+        isLoaded && inView && useFadeAnimation && 'opacity-1'
       )}
-      ref={videoRef}
-      height={props.height}
-      width={props.width}
-      {...videoAttributes}
     >
-      <source src={props.mp4Src} type="video/webm" />
-      <source src={props.webmSrc} type="video/mp4" />
-    </video>
+      {inView && (
+        <video
+          className={cn(
+            props.className,
+            'relative',
+            isRounded && 'rounded-3xl'
+          )}
+          ref={videoRef}
+          height={props.height}
+          width={props.width}
+          {...videoAttributes}
+        >
+          <source src={props.mp4Src} type="video/webm" />
+          <source src={props.webmSrc} type="video/mp4" />
+        </video>
+      )}
+    </div>
   );
 };
