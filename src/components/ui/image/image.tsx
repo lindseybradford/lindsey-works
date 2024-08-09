@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 
-import { MediaAnimation } from '@src/constants';
+import { MediaAnimation, RoundedCorner } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
 type ImageProps = {
@@ -10,12 +10,12 @@ type ImageProps = {
   alt: string;
   className?: string;
   classNameInner?: string;
-  isRounded?: boolean;
+  roundedCorner?: RoundedCorner;
   animationOnLoad?: MediaAnimation;
 };
 
 export const Image = ({
-  isRounded = true,
+  roundedCorner = RoundedCorner.Rounded3xl,
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: ImageProps) => {
@@ -30,8 +30,8 @@ export const Image = ({
     <div
       ref={ref}
       className={cn(
-        props.className,
         'relative',
+        props.className,
         useAnimation && 'transition-opacity duration-500',
         !inView && useFadeAnimation && 'opacity-0',
         inView && useFadeAnimation && 'opacity-1'
@@ -44,9 +44,9 @@ export const Image = ({
           width={props.width}
           alt={props.alt}
           className={cn(
+            roundedCorner,
             props.classNameInner,
-            'absolute',
-            isRounded && 'rounded-3xl'
+            'absolute  object-cover'
           )}
         />
       )}

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { MediaAnimation } from '@src/constants';
+import { MediaAnimation, RoundedCorner } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
 type VideoProps = {
@@ -11,13 +11,13 @@ type VideoProps = {
   width: string;
   className?: string;
   innerClassName?: string;
-  isRounded?: boolean;
+  roundedCorner?: RoundedCorner;
   playAsGif?: boolean;
   animationOnLoad?: MediaAnimation;
 };
 
 export const Video = ({
-  isRounded = true,
+  roundedCorner = RoundedCorner.Rounded3xl,
   animationOnLoad = MediaAnimation.Fade,
   ...props
 }: VideoProps) => {
@@ -52,6 +52,7 @@ export const Video = ({
     <div
       ref={ref}
       className={cn(
+        'relative',
         props.className,
         useAnimation && 'transition-opacity duration-500',
         !isLoaded && useFadeAnimation && 'opacity-0',
@@ -61,9 +62,9 @@ export const Video = ({
       {inView && (
         <video
           className={cn(
+            roundedCorner,
             props.innerClassName,
-            'relative',
-            isRounded && 'rounded-3xl'
+            'absolute object-cover h-full'
           )}
           ref={videoRef}
           height={props.height}

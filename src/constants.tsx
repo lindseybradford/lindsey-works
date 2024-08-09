@@ -10,6 +10,11 @@ export enum MediaAnimation {
   Fade = 'fade',
 }
 
+export enum RoundedCorner {
+  None = 'rounded-none',
+  Rounded3xl = 'rounded-xl lg:rounded-3xl',
+  RoundedXl = 'rounded-xl',
+}
 // Docs: https://www.tailwind-variants.org/docs/slots
 export const Layout = tv({
   slots: {
