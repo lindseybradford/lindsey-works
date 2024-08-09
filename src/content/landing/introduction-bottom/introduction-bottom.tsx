@@ -151,7 +151,7 @@ export const IntroductionBottom = () => {
           </div>
         </div>
 
-        <div className="col-start-3 col-end-10">
+        <div className="lg:col-start-3 lg:col-end-10 col-span-2">
           <Image
             src={bottleProductTwo.src}
             height={bottleProductTwo.height}
