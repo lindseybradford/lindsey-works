@@ -1,10 +1,13 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Theme } from '@src/constants';
+import { Layout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph, ParagraphSize } from 'src/components/ui/paragraph';
 import { Image } from '@src/components/ui/image';
+import { CodeIcon } from '@src/components/icons/code-icon';
+import { ArrowRightIcon } from '@src/components/icons/arrow-right-icon';
+
 // @ts-expect-error
 import profilePhoto from './projectionist-color.webp?&as=metadata';
 
@@ -15,6 +18,7 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 export const ContactAside = () => {
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
+  const { textLink } = Layout();
   const paragraphStyles = cn(isTechnicolor ? `text-pavement` : `text-putty`);
 
   return (
@@ -40,7 +44,19 @@ export const ContactAside = () => {
               Colophon
             </Paragraph>
             <Paragraph size={ParagraphSize.XSmall} className={paragraphStyles}>
+              <CodeIcon className="w-4 h-4 mr-2 inline-block" />
               Code by yours truly using React, TaildwindCSS, and Vite
+              <ArrowRightIcon className="w-4 ml-1 mr-2 inline-block" />
+              <a
+                className={cn(
+                  textLink(),
+                  isTechnicolor ? 'hover:text-technicolor-plum' : 'text-white'
+                )}
+                href="https://github.com/lindseybradford/lindsey-works"
+                target="_blank"
+              >
+                CMD + U
+              </a>
             </Paragraph>
             <Paragraph
               size={ParagraphSize.XSmall}
