@@ -33,8 +33,7 @@ export const Image = ({
         'relative',
         props.className,
         useAnimation && 'transition-opacity duration-500',
-        !inView && useFadeAnimation && 'opacity-0',
-        inView && useFadeAnimation && 'opacity-1'
+        !inView && useFadeAnimation ? 'opacity-0' : 'opacity-1'
       )}
     >
       {inView && (

@@ -12,12 +12,19 @@ import benchmarksStarsWebm from './assets/benchmarks-stars.webm';
 import benchmarkStatsMp4 from './assets/benchmark-stats.mp4';
 import benchmarkStatsWebm from './assets/benchmark-stats.webm';
 import bottleProductWebm from './assets/bottle-product.webm';
+
 // @ts-expect-error
-import mixpanelMobileWebp from './assets/mixpanel-mobile-1.webp?&as=metadata';
+import benchmarksPoster from './assets/benchmarks-poster.webp?&as=metadata';
+// @ts-expect-error
+import statsPoster from './assets/stats-poster.webp?&as=metadata';
+// @ts-expect-error
+import starsPoster from './assets/stars-poster.webp?&as=metadata';
 // @ts-expect-error
 import mixpanelMobileTwoWebp from './assets/mixpanel-mobile-2.webp?&as=metadata';
 // @ts-expect-error
 import mixpanelPricingWebp from './assets/mixpanel-pricing.webp?&as=metadata';
+// @ts-expect-error
+import bottleProductOne from './assets/bottle-product-1.webp?&as=metadata';
 // @ts-expect-error
 import bottleProductTwo from './assets/bottle-product-2.webp?&as=metadata';
 // @ts-expect-error
@@ -49,6 +56,7 @@ export const IntroductionBottom = () => {
             <div className={cn(halfColumn)}>
               <Video
                 playAsGif
+                poster={benchmarksPoster.src}
                 mp4Src={benchmarksHeroMp4}
                 webmSrc={benchmarksHeroWebm}
                 className="aspect-[16/9]"
@@ -71,6 +79,7 @@ export const IntroductionBottom = () => {
             <div className={cn(quarterColumn)}>
               <div className="lg:max-w-sm">
                 <Video
+                  poster={statsPoster.src}
                   roundedCorner={RoundedCorner.RoundedXl}
                   mp4Src={benchmarkStatsMp4}
                   webmSrc={benchmarkStatsWebm}
@@ -110,6 +119,7 @@ export const IntroductionBottom = () => {
             <div className={cn(halfColumn)}>
               <Video
                 playAsGif
+                poster={bottleProductOne.src}
                 webmSrc={bottleProductWebm}
                 className="aspect-[863/540] lg:mt-12 lg:max-w-lg"
                 height="1080"
@@ -140,6 +150,7 @@ export const IntroductionBottom = () => {
             </div>
             <div className={cn(halfColumn)}>
               <Video
+                poster={starsPoster.src}
                 mp4Src={benchmarksStarsMp4}
                 webmSrc={benchmarksStarsWebm}
                 className="aspect-[16/9]"
