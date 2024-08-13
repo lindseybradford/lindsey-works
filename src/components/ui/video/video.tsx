@@ -5,6 +5,7 @@ import { MediaAnimation, RoundedCorner } from '@src/constants';
 import { cn } from '@src/utils/cn';
 
 type VideoProps = {
+  poster?: string;
   mp4Src?: string;
   webmSrc: string;
   height: string;
@@ -25,8 +26,7 @@ export const Video = ({
     triggerOnce: true,
     threshold: 0.1,
   });
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+
   const useAnimation = animationOnLoad !== MediaAnimation.None;
   const useFadeAnimation = animationOnLoad === MediaAnimation.Fade;
 
@@ -39,15 +39,6 @@ export const Video = ({
     }),
   };
 
-  useEffect(() => {
-    if (inView) {
-      videoRef.current!.onloadeddata = () => {
-        videoRef.current!.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA &&
-          setIsLoaded(true);
-      };
-    }
-  });
-
   return (
     <div
       ref={ref}
@@ -55,26 +46,23 @@ export const Video = ({
         'relative',
         props.className,
         useAnimation && 'transition-opacity duration-500',
-        !isLoaded && useFadeAnimation && 'opacity-0',
-        isLoaded && inView && useFadeAnimation && 'opacity-1'
+        useFadeAnimation && (inView ? 'opacity-1' : 'opacity-0')
       )}
     >
-      {inView && (
-        <video
-          className={cn(
-            roundedCorner,
-            props.innerClassName,
-            'absolute object-cover h-full'
-          )}
-          ref={videoRef}
-          height={props.height}
-          width={props.width}
-          {...videoAttributes}
-        >
-          {props.mp4Src && <source src={props.mp4Src} type="video/webm" />}
-          <source src={props.webmSrc} type="video/mp4" />
-        </video>
-      )}
+      <video
+        className={cn(
+          roundedCorner,
+          props.innerClassName,
+          'absolute object-cover h-full'
+        )}
+        height={props.height}
+        width={props.width}
+        poster={props.poster}
+        {...videoAttributes}
+      >
+        {props.mp4Src && <source src={props.mp4Src} type="video/mp4" />}
+        <source src={props.webmSrc} type="video/webm" />
+      </video>
     </div>
   );
 };
