@@ -1,4 +1,4 @@
-import { IconProps } from '@src/types';
+import { IconProps } from '@src/vite-env-extended';
 
 export const CmdKIcon = ({ className }: IconProps) => {
   return (
