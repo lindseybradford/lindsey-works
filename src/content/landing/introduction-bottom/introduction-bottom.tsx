@@ -181,7 +181,7 @@ export const IntroductionBottom = () => {
             height="1032"
             width="1920"
             alt="Bottle products dashboard"
-            className="aspect-[1032/1920]"
+            className="aspect-[1920/1032]"
           />
         </div>
         <div className={cn(halfColumn)}>
