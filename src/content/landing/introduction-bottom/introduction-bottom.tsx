@@ -64,6 +64,7 @@ export const IntroductionBottom = () => {
                 className="aspect-[16/9]"
                 height="596"
                 width="1078"
+                roundedCorner={RoundedCorner.RoundedXl}
               />
             </div>
             <div className={cn(halfColumn, 'flex justify-end')}>
@@ -82,13 +83,13 @@ export const IntroductionBottom = () => {
               <div className="lg:max-w-sm">
                 <Video
                   poster={statsPoster.src}
-                  roundedCorner={RoundedCorner.RoundedXl}
                   mp4Src={benchmarkStatsMp4}
                   webmSrc={benchmarkStatsWebm}
                   className="aspect-[16/10]"
                   height="596"
                   width="1078"
                   playAsGif
+                  roundedCorner={RoundedCorner.RoundedXl}
                 />
               </div>
             </div>
@@ -100,6 +101,7 @@ export const IntroductionBottom = () => {
                 alt="Mixpanel mobile experience"
                 className="aspect-[16/10]"
                 classNameInner="h-full object-cover"
+                roundedCorner={RoundedCorner.RoundedXl}
               />
             </div>
 
@@ -111,6 +113,7 @@ export const IntroductionBottom = () => {
                 alt="Mixpanel pricing flow"
                 className="aspect-[16/9]"
                 classNameInner="h-full object-cover"
+                roundedCorner={RoundedCorner.RoundedXl}
               />
             </div>
           </div>
@@ -120,12 +123,12 @@ export const IntroductionBottom = () => {
           <div className={cn(nestedGrid)}>
             <div className={cn(halfColumn)}>
               <Image
-                roundedCorner={RoundedCorner.RoundedXl}
                 src={mixpanelImmersiveOnboardingSetupWebm}
                 height="1800"
                 width="3200"
                 alt="Mixpanel Heliograph components in immersive onboarding flow"
                 className="aspect-[3200/1800]"
+                roundedCorner={RoundedCorner.RoundedXl}
               />
             </div>
             <div className={cn(halfColumn)}>
@@ -136,6 +139,7 @@ export const IntroductionBottom = () => {
                 alt="Mixpanel mobile experience"
                 className="aspect-[16/10]"
                 classNameInner="h-full object-cover"
+                roundedCorner={RoundedCorner.RoundedXl}
               />
             </div>
             <div className={cn(halfColumn)}>
@@ -144,9 +148,10 @@ export const IntroductionBottom = () => {
                   src={heliographReadme.src}
                   height={heliographReadme.height}
                   width={heliographReadme.width}
-                  alt="Mixpanel mobile experience"
+                  alt="Heliograph README.md file"
                   className="aspect-[2/1]"
                   classNameInner="h-full object-cover"
+                  roundedCorner={RoundedCorner.RoundedXl}
                 />
               </div>
             </div>
@@ -176,12 +181,12 @@ export const IntroductionBottom = () => {
         </div>
         <div className={cn(halfColumn)}>
           <Image
-            roundedCorner={RoundedCorner.RoundedXl}
             src={bottleAutomationWebm}
             height="1032"
-            width="1920"
+            width="1540"
             alt="Bottle products dashboard"
-            className="aspect-[1920/1032]"
+            className="aspect-[1540/1032]"
+            roundedCorner={RoundedCorner.RoundedXl}
           />
         </div>
         <div className={cn(halfColumn)}>
@@ -190,7 +195,8 @@ export const IntroductionBottom = () => {
             height={bottleProductTwo.height}
             width={bottleProductTwo.width}
             alt="Bottle product detail"
-            className="aspect-[863/540] "
+            className="aspect-[863/540]"
+            roundedCorner={RoundedCorner.RoundedXl}
           />
         </div>
       </div>
