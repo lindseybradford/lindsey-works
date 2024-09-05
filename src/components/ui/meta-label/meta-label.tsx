@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout } from '@src/constants';
+import { ContentSectionLayout } from '@src/constants';
 
 type MetaLabelProps = {
   tagName?: `h3` | `h4` | `h5` | `h6` | `p`;
@@ -16,7 +16,7 @@ export const MetaLabel = ({
   hasDingbat = true,
   children,
 }: MetaLabelProps) => {
-  const { textTransition } = Layout();
+  const { textTransition } = ContentSectionLayout();
   return createElement(
     tagName,
     {

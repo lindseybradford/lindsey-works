@@ -15,7 +15,8 @@ export default {
         yellow: 'var(--technicolor-yellow)',
         rose: 'var(--technicolor-rose)',
       },
-      white: 'var(--white)',
+      white: '#ECECE3',
+      black: '#1A1918',
       pavement: 'var(--pavement)',
       putty: {
         DEFAULT: 'var(--putty)',
@@ -24,7 +25,6 @@ export default {
     },
     variables: {
       DEFAULT: {
-        white: 'rgb(236, 236, 227)', // #ECECE3
         pavement: 'rgb(22, 22, 22)', // #161616
         putty: {
           DEFAULT: '#A0A0A0',

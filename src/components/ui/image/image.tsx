@@ -1,18 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 
-import { MediaAnimation, RoundedCorner } from '@src/constants';
+import { ImageProps, MediaAnimation, RoundedCorner } from '@src/constants';
 import { cn } from '@src/utils/cn';
-
-type ImageProps = {
-  src: string;
-  height: string;
-  width: string;
-  alt: string;
-  className?: string;
-  classNameInner?: string;
-  roundedCorner?: RoundedCorner;
-  animationOnLoad?: MediaAnimation;
-};
 
 export const Image = ({
   roundedCorner = RoundedCorner.Rounded3xl,

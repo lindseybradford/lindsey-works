@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout, Theme } from '@src/constants';
+import { ContentSectionLayout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { MetaLabel } from 'src/components/ui/meta-label';
 import { Paragraph } from 'src/components/ui/paragraph';
@@ -11,7 +11,7 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const IntroductionAside = () => {
-  const { sectionTopBarAtSm } = Layout();
+  const { sectionTopBarAtSm } = ContentSectionLayout();
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
 

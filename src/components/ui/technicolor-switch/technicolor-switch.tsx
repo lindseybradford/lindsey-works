@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 
-import { Layout, Theme } from '@src/constants';
+import { ContentSectionLayout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { TechnicolorIcon } from '@src/components/icons/technicolor-icon';
 import { cn } from '@src/utils/cn';
 import './technicolor-switch.css';
 
 export const TechnicolorSwitch = () => {
-  const { textLinkPressed } = Layout();
+  const { textLinkPressed } = ContentSectionLayout();
   const [theme, setTheme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
 

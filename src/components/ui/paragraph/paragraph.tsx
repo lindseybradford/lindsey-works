@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout } from '@src/constants';
+import { ContentSectionLayout } from '@src/constants';
 
 export enum ParagraphSize {
   Base = 'base',
@@ -21,7 +21,7 @@ export const Paragraph = ({
   className,
   children,
 }: ParagraphProps) => {
-  const { textTransition } = Layout();
+  const { textTransition } = ContentSectionLayout();
   const ParagraphBaseStyles = [textTransition(), 'font-body'];
   const ParagraphStyles = new Map([
     [

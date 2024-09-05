@@ -1,5 +1,4 @@
-import { tv } from 'tailwind-variants';
-
+import { GridLayout } from '@src/constants';
 import { cn } from '@src/utils/cn';
 import { RoundedCorner } from '@src/constants';
 import { Image } from '@src/components/ui/image';
@@ -38,17 +37,9 @@ import heliographButtons from './assets/mixpanel-heliograph-buttons.webp?&as=met
 // @ts-expect-error
 import heliographInput from './assets/mixpanel-heliograph-input.webp?&as=metadata';
 
-export const Layout = tv({
-  slots: {
-    parentGrid: 'grid grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10',
-    halfColumn: 'col-span-2 md:col-span-3 lg:col-span-6',
-    nestedGrid: 'grid gap-8 lg:gap-10',
-    quarterColumn: 'col-span-2 md:col-span-3',
-  },
-});
-
 export const IntroductionBottom = () => {
-  const { parentGrid, halfColumn, nestedGrid, quarterColumn } = Layout.slots;
+  const { parentGrid, halfColumn, nestedGrid, quarterColumn } =
+    GridLayout.slots;
 
   return (
     <>

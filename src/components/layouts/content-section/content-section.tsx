@@ -1,7 +1,7 @@
 import { cn } from '@src/utils/cn';
-import { Layout } from '@src/constants';
+import { ContentSectionLayout } from '@src/constants';
 
-const { container, sectionSideMargins } = Layout();
+const { container, sectionSideMargins } = ContentSectionLayout();
 
 type ContentSectionProps = {
   className?: string;
