@@ -25,6 +25,7 @@ export default {
     },
     variables: {
       DEFAULT: {
+        varWhite: 'rgb(236, 236, 227)', // #ECECE3
         pavement: 'rgb(22, 22, 22)', // #161616
         putty: {
           DEFAULT: '#A0A0A0',

@@ -1,7 +1,7 @@
 .icon {
-    fill: var(--white)
+  fill: var(--varWhite);
 }
 
 .icon--technicolor {
-    fill: url('#technicolor-gradient');
+  fill: url('#technicolor-gradient');
 }
