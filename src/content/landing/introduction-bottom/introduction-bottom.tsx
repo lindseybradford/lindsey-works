@@ -12,6 +12,8 @@ import benchmarksStarsWebm from './assets/benchmarks-stars.webm';
 import benchmarkStatsMp4 from './assets/benchmark-stats.mp4';
 import benchmarkStatsWebm from './assets/benchmark-stats.webm';
 import bottleProductWebm from './assets/bottle-product.webm';
+import mixpanelImmersiveOnboardingSetupWebm from './assets/mixpanel-immersive-onboarding-setup-guide.webp';
+import bottleAutomationWebm from './assets/bottle-automation.webp';
 
 // @ts-expect-error
 import benchmarksPoster from './assets/benchmarks-poster.webp?&as=metadata';
@@ -92,12 +94,12 @@ export const IntroductionBottom = () => {
             </div>
             <div className={cn(quarterColumn)}>
               <Image
-                roundedCorner={RoundedCorner.RoundedXl}
-                src={bottleProducts.src}
-                height={bottleProducts.height}
-                width={bottleProducts.width}
-                alt="Bottle products dashboard"
-                className="aspect-[863/540]"
+                src={heliographInput.src}
+                height={heliographInput.height}
+                width={heliographInput.width}
+                alt="Mixpanel mobile experience"
+                className="aspect-[16/10]"
+                classNameInner="h-full object-cover"
               />
             </div>
 
@@ -117,13 +119,13 @@ export const IntroductionBottom = () => {
         <div className={cn(halfColumn)}>
           <div className={cn(nestedGrid)}>
             <div className={cn(halfColumn)}>
-              <Video
-                playAsGif
-                poster={bottleProductOne.src}
-                webmSrc={bottleProductWebm}
-                className="aspect-[863/540] lg:mt-12 lg:max-w-lg"
-                height="1080"
-                width="1726"
+              <Image
+                roundedCorner={RoundedCorner.RoundedXl}
+                src={mixpanelImmersiveOnboardingSetupWebm}
+                height="1800"
+                width="3200"
+                alt="Mixpanel Heliograph components in immersive onboarding flow"
+                className="aspect-[3200/1800]"
               />
             </div>
             <div className={cn(halfColumn)}>
@@ -137,13 +139,13 @@ export const IntroductionBottom = () => {
               />
             </div>
             <div className={cn(halfColumn)}>
-              <div className="grow lg:max-w-md">
+              <div className="grow lg:max-w-lg">
                 <Image
                   src={heliographReadme.src}
                   height={heliographReadme.height}
                   width={heliographReadme.width}
                   alt="Mixpanel mobile experience"
-                  className="aspect-[1/1]"
+                  className="aspect-[2/1]"
                   classNameInner="h-full object-cover"
                 />
               </div>
@@ -163,22 +165,32 @@ export const IntroductionBottom = () => {
         </div>
 
         <div className="lg:col-start-3 lg:col-end-10 col-span-2">
+          <Video
+            playAsGif
+            poster={bottleProductOne.src}
+            webmSrc={bottleProductWebm}
+            className="aspect-[863/540]"
+            height="1080"
+            width="1726"
+          />
+        </div>
+        <div className={cn(halfColumn)}>
+          <Image
+            roundedCorner={RoundedCorner.RoundedXl}
+            src={bottleAutomationWebm}
+            height="1032"
+            width="1920"
+            alt="Bottle products dashboard"
+            className="aspect-[1032/1920]"
+          />
+        </div>
+        <div className={cn(halfColumn)}>
           <Image
             src={bottleProductTwo.src}
             height={bottleProductTwo.height}
             width={bottleProductTwo.width}
             alt="Bottle product detail"
             className="aspect-[863/540] "
-          />
-        </div>
-        <div className={cn(halfColumn)}>
-          <Image
-            src={heliographInput.src}
-            height={heliographInput.height}
-            width={heliographInput.width}
-            alt="Mixpanel mobile experience"
-            className="aspect-[16/10]"
-            classNameInner="h-full object-cover"
           />
         </div>
       </div>
