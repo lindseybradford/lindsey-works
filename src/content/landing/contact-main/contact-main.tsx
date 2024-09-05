@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout, Theme } from '@src/constants';
+import { ContentSectionLayout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph } from '@src/components/ui/paragraph';
 import { Heading, HeadingLevel } from '@src/components/ui/heading';
@@ -9,7 +9,7 @@ import { Heading, HeadingLevel } from '@src/components/ui/heading';
 export const ContactMain = () => {
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
-  const { textLink } = Layout();
+  const { textLink } = ContentSectionLayout();
   const paragraphStyles = cn(
     isTechnicolor ? `text-putty-dark` : `text-white`,
     `max-w-2xl`

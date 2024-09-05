@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout, Theme } from '@src/constants';
+import { ContentSectionLayout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph } from '@src/components/ui/paragraph';
 import { Heading, HeadingLevel } from '@src/components/ui/heading';
 
 export const IntroductionMain = () => {
-  const { textTransition } = Layout();
+  const { textTransition } = ContentSectionLayout();
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
   const paragraphStyles = cn(isTechnicolor ? 'text-putty-dark' : 'text-white');

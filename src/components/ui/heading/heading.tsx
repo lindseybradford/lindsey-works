@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout } from '@src/constants';
+import { ContentSectionLayout } from '@src/constants';
 
 export enum HeadingLevel {
   H1 = 1,
@@ -18,7 +18,7 @@ type HeadingProps = {
 };
 
 export const Heading = ({ level, className, children }: HeadingProps) => {
-  const { textTransition } = Layout();
+  const { textTransition } = ContentSectionLayout();
   const HeadingBaseStyles = ['font-bold font-heading', textTransition()];
   const HeadingStyles = new Map([
     [

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { cn } from '@src/utils/cn';
-import { Layout, Theme } from '@src/constants';
+import { ContentSectionLayout, Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Paragraph, ParagraphSize } from 'src/components/ui/paragraph';
 import { Image } from '@src/components/ui/image';
@@ -18,7 +18,7 @@ const MetaList = ({ children }: { children: React.ReactNode }) => {
 export const ContactAside = () => {
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
-  const { textLink } = Layout();
+  const { textLink } = ContentSectionLayout();
   const paragraphStyles = cn(isTechnicolor ? `text-pavement` : `text-putty`);
 
   return (
@@ -36,7 +36,7 @@ export const ContactAside = () => {
           width={profilePhoto.width}
           alt="Lindsey Bradford"
           className="mb-10 aspect-1 max-w-52 md:max-w-lg lg:max-w-lg"
-          classNameInner={cn('rounded-3xl', !isTechnicolor && 'grayscale')}
+          classNameInner={cn(!isTechnicolor && 'grayscale')}
         />
         <MetaList>
           <li>

@@ -1,9 +1,9 @@
 import { cn } from '@src/utils/cn';
-import { Layout } from '@src/constants';
+import { ContentSectionLayout } from '@src/constants';
 
 import { TechnicolorSwitch } from '@src/components/ui/technicolor-switch/technicolor-switch';
 
-const { container, sectionSideMargins } = Layout();
+const { container, sectionSideMargins } = ContentSectionLayout();
 
 export const TopNav = () => {
   return (
