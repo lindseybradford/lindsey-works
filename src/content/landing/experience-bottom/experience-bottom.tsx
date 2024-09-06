@@ -13,21 +13,28 @@ export const ExperienceBottom = () => {
   const [theme] = useContext(ThemeContext);
   const isTechnicolor = theme === Theme.Technicolor;
   const ctaWellTextStyle = cn(
-    isTechnicolor ? `text-putty-dark` : `text-white`,
+    isTechnicolor ? `text-white` : `text-white`,
     `leading-tight font-heading text-lg`
   );
-  const paragraphStyle = cn(isTechnicolor ? `text-putty-dark` : `text-white`);
+  const paragraphStyle = cn(isTechnicolor ? `text-black` : `text-white`);
   const { parentGridRelaxed, halfColumn } = GridLayout.slots;
 
   return (
     <div className="pt-28 lg:pt-14">
       <div>
         <CTAWell
+          className={cn(isTechnicolor ? 'bg-pavement' : 'bg-white/10')}
           btnText="View Resume"
           btnUrl="https://telegraph.notion.site/Lindsey-Bradford-f24b2726ada54591bcc9204f25bc66db"
         >
           <div className={ctaWellTextStyle}>Lindsey Bradford</div>
-          <div className={cn(ctaWellTextStyle, 'opacity-70 -mt-1')}>
+          <div
+            className={cn(
+              ctaWellTextStyle,
+              !isTechnicolor && 'opacity-70',
+              '-mt-1'
+            )}
+          >
             Currently Software Engineer at MixPanel
           </div>
         </CTAWell>

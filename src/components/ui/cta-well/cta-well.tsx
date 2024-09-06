@@ -19,11 +19,11 @@ export const CTAWell = ({
 
   return (
     <div
-      className={cn(parentGrid, 'rounded-xl bg-white/10 p-8 max-w-5xl mx-auto')}
+      className={cn(className, parentGrid, 'rounded-xl p-8 max-w-5xl mx-auto')}
     >
       <div className={cn(halfColumn)}>{children}</div>
       <div className={cn(halfColumn, 'lg:flex justify-end items-center')}>
-        <Link to={btnUrl} useButtonStyle className="">
+        <Link to={btnUrl} useButtonStyle>
           {btnText}
         </Link>
       </div>
