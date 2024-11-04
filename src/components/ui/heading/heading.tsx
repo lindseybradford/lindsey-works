@@ -13,25 +13,37 @@ export enum HeadingLevel {
 }
 type HeadingProps = {
   level: HeadingLevel;
+  isFlush?: boolean;
   className?: string;
   children: React.ReactNode;
 };
 
-export const Heading = ({ level, className, children }: HeadingProps) => {
+export const Heading = ({
+  level,
+  isFlush = false,
+  className,
+  children,
+}: HeadingProps) => {
   const { textTransition } = ContentSectionLayout();
   const HeadingBaseStyles = ['font-bold font-heading', textTransition()];
   const HeadingStyles = new Map([
     [
       HeadingLevel.H1,
       cn(
-        `lg:text-8xl md:text-6xl text-5xl max-w-xxl mb-16 leading-2 tracking-tight`,
+        `lg:text-8xl md:text-6xl text-5xl max-w-xxl leading-2 tracking-tight`,
+        !isFlush && 'mb-16',
         HeadingBaseStyles,
         className
       ),
     ],
     [
       HeadingLevel.H2,
-      cn(`text-3xl max-w-xl mb-10`, HeadingBaseStyles, className),
+      cn(
+        `text-3xl max-w-xl`,
+        !isFlush && 'mb-10',
+        HeadingBaseStyles,
+        className
+      ),
     ],
   ]);
 

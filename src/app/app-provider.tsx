@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { Theme } from '@src/constants';
 import { ThemeContext } from '@src/context/theme-provider';
 import { Spinner } from '@src/components/ui/spinner';
+import { ErrorFallback } from '@src/components/layouts/error-fallback';
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -22,8 +23,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [theme, setTheme] = useState(Theme.Dark);
 
   return (
-    <Suspense fallback={SuspenseFallback()}>
-      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+    <Suspense fallback={<SuspenseFallback />}>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
           <ThemeContext.Provider value={[theme, setTheme]}>
             {children}
