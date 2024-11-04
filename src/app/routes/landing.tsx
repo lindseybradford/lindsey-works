@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '@src/components/layouts/error-fallback';
 
 import { cn } from '@src/utils/cn';
 import { SEO, Theme, URL } from '@src/constants';
@@ -12,7 +14,7 @@ export const LandingRoute = () => {
   const [theme] = useContext(ThemeContext);
 
   return (
-    <>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <SEOTags
         siteName={SEO.siteName}
         title={SEO.title}
@@ -47,6 +49,6 @@ export const LandingRoute = () => {
         </main>
       </div>
       <div className="noise"></div>
-    </>
+    </ErrorBoundary>
   );
 };
